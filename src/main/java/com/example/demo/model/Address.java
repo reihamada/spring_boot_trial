@@ -9,20 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.geo.Point;
-
 @Entity
-@Table(name = "sakila.address")
+@Table(name = "address")
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	@Column(name = "address_id")
-	private Long address_id;
+	public Long address_id;
 
 	@Column(name = "address")
-	private String address;
-
+	public String address;
 	@Column(name = "address2")
 	private String address2;
 
@@ -38,8 +35,8 @@ public class Address {
 	@Column(name = "phone")
 	private String phone;
 
-	@Column(name = "location")
-	private Point location;
+//	@Column(name = "location")
+//	private Point location;
 
 	@Column(name = "last_update")
 	private Timestamp last_update;

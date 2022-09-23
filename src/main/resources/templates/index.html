@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Hello</title>
 </head>
 <body>
-  <h1>Hello World!</h1>
+	<h1>Hello World!</h1>
+	<table>
+		<tr>
+			<th>address_id</th>
+			<th>address</th>
+		</tr>
+		<tr th:each="test : ${testList}">
+			<td th:text="${test.address_id}"></td>
+			<td th:text="${test.address}"></td>
+		</tr>
+	</table>
 </body>
 </html>

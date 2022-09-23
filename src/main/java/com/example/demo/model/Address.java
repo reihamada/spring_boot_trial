@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.geo.Point;
+
 @Entity
 @Table(name = "address")
 public class Address {
@@ -35,8 +37,8 @@ public class Address {
 	@Column(name = "phone")
 	private String phone;
 
-//	@Column(name = "location")
-//	private Point location;
+	@Column(name = "locationpoint", columnDefinition = "POINT") 
+	private Point location;
 
 	@Column(name = "last_update")
 	private Timestamp last_update;

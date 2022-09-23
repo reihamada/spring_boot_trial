@@ -12,12 +12,13 @@ import javax.persistence.Table;
 import org.springframework.data.geo.Point;
 
 @Entity
-@Table(name = "address")
+@Table(name = "sakila.address")
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	@Column(name = "address_id")
-	private Long id;
+	private Long address_id;
 
 	@Column(name = "address")
 	private String address;

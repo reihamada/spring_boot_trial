@@ -12,6 +12,7 @@ import com.example.demo.model.Address;
 import com.example.demo.repository.AddressRepository;
 
 @Controller
+@RequestMapping()
 public class AddressController {
 	@Autowired
 	AddressRepository addressRepository;

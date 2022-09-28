@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HelloController {
@@ -16,7 +16,7 @@ public class HelloController {
 	private JdbcTemplate jdbcTemplate;
 	org.slf4j.Logger logger = LoggerFactory.getLogger(HelloController.class);
 
-	@GetMapping("/")
+	@RequestMapping("/api")
 	public String index(Model model) {
 		logger.error("XXXXX");
 		String sql = "SELECT * FROM sakila.address";

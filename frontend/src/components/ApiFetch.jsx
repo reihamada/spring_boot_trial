@@ -38,7 +38,10 @@ export const ApiFetch = () => {
     }).then(
       function (response) {
         // レスポンス結果
-        setAddresses(response);
+        response.json().then((json) => {
+          console.log(json);
+          setAddresses(json);
+        });
       },
       function (error) {
         // エラー内容
@@ -54,22 +57,31 @@ export const ApiFetch = () => {
         <li>{addresses.address}</li>
       </ul>
       <div>
-        address: <input onChange={(e) => setAddress(e.target.value)} value={address} />
+        address:{' '}
+        <input onChange={(e) => setAddress(e.target.value)} value={address} />
       </div>
       <div>
-        district: <input onChange={(e) => setDistrict(e.target.value)} value={district} />
+        district:{' '}
+        <input onChange={(e) => setDistrict(e.target.value)} value={district} />
       </div>
       <div>
-        city_id: <input onChange={(e) => setCity_id(e.target.value)} value={city_id} />
+        city_id:{' '}
+        <input onChange={(e) => setCity_id(e.target.value)} value={city_id} />
       </div>
       <div>
-        phone: <input onChange={(e) => setPhone(e.target.value)} value={phone} />
+        phone:{' '}
+        <input onChange={(e) => setPhone(e.target.value)} value={phone} />
       </div>
       <div>
-        location: <input onChange={(e) => setLocation(e.target.value)} value={location} />
+        location:{' '}
+        <input onChange={(e) => setLocation(e.target.value)} value={location} />
       </div>
       <div>
-        last_update: <input onChange={(e) => setLast_update(e.target.value)} value={last_update} />
+        last_update:{' '}
+        <input
+          onChange={(e) => setLast_update(e.target.value)}
+          value={last_update}
+        />
       </div>
       <div>
         <button onClick={handleSubmit}>送信</button>

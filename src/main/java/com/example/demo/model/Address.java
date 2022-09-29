@@ -9,18 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.geo.Point;
-
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "address")
+@Table(name = "address3")
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-	// TODO: public why???
 	@Column(name = "address_id")
 	private Long address_id;
 
@@ -42,8 +39,8 @@ public class Address {
 	@Column(name = "phone")
 	private String phone;
 
-	@Column(name = "locationpoint", columnDefinition = "POINT")
-	private Point location;
+//	@Column(name = "locationpoint", columnDefinition = "POINT")
+//	private Point location;
 
 	@Column(name = "last_update")
 	private Timestamp last_update;

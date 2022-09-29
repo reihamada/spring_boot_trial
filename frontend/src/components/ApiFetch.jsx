@@ -38,7 +38,7 @@ export const ApiFetch = () => {
     }).then(
       function (response) {
         // レスポンス結果
-        setAddresses(response.body[0]);
+        setAddresses(response);
       },
       function (error) {
         // エラー内容

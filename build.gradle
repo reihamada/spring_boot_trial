@@ -35,6 +35,7 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+// FIXME: ↓動かない!?
 task buildReact(type: NpmTask) {
     execOverrides {
         it.workingDir = './frontend'

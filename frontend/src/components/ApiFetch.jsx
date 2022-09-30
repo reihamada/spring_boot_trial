@@ -17,7 +17,7 @@ export const ApiFetch = () => {
       .then((res) => res.json())
       // APIから渡されるレスポンスデータ(data)をstateにセットする
       .then((data) => {
-        setAddresses(data[0]);
+        setAddresses(data);
       });
   }, []);
 
@@ -39,8 +39,7 @@ export const ApiFetch = () => {
       function (response) {
         // レスポンス結果
         response.json().then((json) => {
-          console.log(json);
-          setAddresses(json);
+          addresses.push(json);
         });
       },
       function (error) {
@@ -52,10 +51,19 @@ export const ApiFetch = () => {
 
   return (
     <div>
-      <ul>
-        <li>{addresses.address_id}</li>
-        <li>{addresses.address}</li>
-      </ul>
+      <table border={1}>
+        <tbody>
+          {addresses.map((address) => (
+            <tr key={address.address_id}>
+              <td>{address.address}</td>
+              <td>{address.district}</td>
+              <td>{address.city_id}</td>
+              <td>{address.phone}</td>
+              <td>{address.last_update}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <div>
         address:{' '}
         <input onChange={(e) => setAddress(e.target.value)} value={address} />

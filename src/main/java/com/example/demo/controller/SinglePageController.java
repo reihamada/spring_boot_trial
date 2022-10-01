@@ -10,4 +10,8 @@ public class SinglePageController {
     public String index() {
         return "forward:/index.html";
     }
+    @GetMapping("/login")
+    public String login() {
+        return "login.html";
+    }
 }
